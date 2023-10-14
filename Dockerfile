@@ -1,11 +1,11 @@
 FROM ubuntu:latest as BUILD
 
 RUN apt-get update 
-RUN  apt-get install opendjdk-17-jdk -y 
+RUN apt-get install opendjdk-17-jdk -y 
 
 COPY . .
 
-RUN  apt-get install maven -y
+RUN apt-get install maven -y
 RUN mvn clean install 
 
 EXPOSE 8080
